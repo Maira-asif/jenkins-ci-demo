@@ -27,13 +27,13 @@ pipeline {
         stage('4️⃣ Deploy') {
             steps {
                 echo 'Deploying application...'
-                sh 'echo Deployment successful on Kubernetes (simulated)'
+                sh 'echo Deployment successful'
             }
         }
 
         stage('5️⃣ Notify') {
             steps {
-                echo 'Pipeline finished successfully 🎉'
+                echo 'Pipeline executed successfully 🎉'
             }
         }
     }
