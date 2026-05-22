@@ -3,38 +3,37 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('1️⃣ Checkout') {
             steps {
-                echo 'Pulling code from GitHub'
+                echo 'Cloning code from GitHub...'
+                git url: 'https://github.com/Maira-asif/jenkins-ci-demo.git', branch: 'main'
             }
         }
 
-        stage('Build') {
+        stage('2️⃣ Build') {
             steps {
-                echo 'Building application...'
-                echo 'Item added: Build started'
+                echo 'Building project...'
+                sh 'echo Build completed successfully'
             }
         }
 
-        stage('Test') {
+        stage('3️⃣ Test') {
             steps {
                 echo 'Running tests...'
-                echo 'Item added: Test cases running'
+                sh 'echo All tests passed'
             }
         }
 
-        stage('Items Section') {
+        stage('4️⃣ Deploy') {
             steps {
-                echo 'ADDING ITEMS NOW...'
-                echo 'Item 1: Login Module'
-                echo 'Item 2: API Module'
-                echo 'Item 3: Database Module'
+                echo 'Deploying application...'
+                sh 'echo Deployment successful on Kubernetes (simulated)'
             }
         }
 
-        stage('Notify') {
+        stage('5️⃣ Notify') {
             steps {
-                echo 'Pipeline executed successfully 🎉'
+                echo 'Pipeline finished successfully 🎉'
             }
         }
     }
