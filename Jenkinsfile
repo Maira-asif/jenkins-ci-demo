@@ -11,19 +11,30 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'echo Building application...'
+                echo 'Building application...'
+                echo 'Item added: Build started'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'echo Running tests...'
+                echo 'Running tests...'
+                echo 'Item added: Test cases running'
+            }
+        }
+
+        stage('Items Section') {
+            steps {
+                echo 'ADDING ITEMS NOW...'
+                echo 'Item 1: Login Module'
+                echo 'Item 2: API Module'
+                echo 'Item 3: Database Module'
             }
         }
 
         stage('Notify') {
             steps {
-                echo 'Pipeline executed successfully!'
+                echo 'Pipeline executed successfully 🎉'
             }
         }
     }
